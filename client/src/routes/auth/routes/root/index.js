@@ -5,7 +5,7 @@ import { withAuth } from '@8base/app-provider';
 class AuthContainer extends React.Component {
   async componentDidMount() {
     const { auth } = this.props;
-
+    console.log(auth);
     await auth.authClient.authorize();
   }
 

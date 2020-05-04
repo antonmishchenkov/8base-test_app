@@ -2,7 +2,7 @@ module.exports = {
   client: {
     service: {
       name: '8base',
-      url: 'https://api.8base.com/cjrkt66qe000001ryzd3q4aiv',
+      url: 'https://api.8base.com/ck9ldkpk8000207mk8c4uftmp',
     },
     includes: [
       "client/src/*.{ts,tsx,js,jsx}"

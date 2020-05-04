@@ -130,21 +130,21 @@ export const LISTINGS_LIST_QUERY = gql`
           id
           user {
             firstName
-            lastName 
+            lastName
           }
         }
         buyer {
           id
           user {
             firstName
-            lastName 
+            lastName
           }
         }
         seller {
           id
           user {
             firstName
-            lastName 
+            lastName
           }
         }
         documents {
@@ -209,6 +209,46 @@ export const PROPERTIES_LIST_QUERY = gql`
         garage
         pool
       }
+    }
+  }
+`;
+
+// ----------------------
+export const CLIENTS_LIST_QUERY = gql`
+  query ClientsList {
+    clientsList {
+      items {
+        id
+        lastName
+        firstName
+        email
+        phone
+        birthday
+      }
+    }
+  }
+`;
+
+export const CLIENT_CREATE_MUTATION = gql`
+  mutation ClientCreate($data: ClientCreateInput!) {
+    clientCreate(data: $data) {
+      id
+    }
+  }
+`;
+
+export const CLIENT_UPDATE_MUTATION = gql`
+  mutation ClientUpdate($data: ClientUpdateInput!) {
+    clientUpdate(data: $data) {
+      id
+    }
+  }
+`;
+
+export const CLIENT_DELETE_MUTATION = gql`
+  mutation ClientDelete($id: ID!) {
+    clientDelete(data: { id: $id }) {
+      success
     }
   }
 `;
