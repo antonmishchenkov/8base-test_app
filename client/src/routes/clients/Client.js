@@ -5,15 +5,23 @@ import * as sharedGraphQL from 'shared/graphql';
 
 import { ClientDetails } from './ClientDetails';
 
+function getClient(client) {
+  return client ? `${client.firstName} ${client.lastName}` : '';
+}
+
 const Client = props => (
   <Query query={sharedGraphQL.CLIENT_QUERY} variables={{ id: props.computedMatch.params.id }} >
   {
     ({ loading, error, data }) => {
+      if (loading) return <p>Loading…</p>;
+      if (error) {
+        return <p>Error :(</p>;
+      }
 
       return (
         <Card padding="md" stretch>
           <Card.Header>
-            <Heading type="h4" text={`Client: ${data.client.firstName} ${data.client.lastName}`} />
+            <Heading type="h4" text={`Client: ${getClient(data.client)}`} />
           </Card.Header>
 
           <Card.Body padding="none" stretch scrollable>

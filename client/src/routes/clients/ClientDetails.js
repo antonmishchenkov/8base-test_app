@@ -21,22 +21,22 @@ let ClientDetails = props => (
   <div className="client">
     <div className="client__data">
       <Label text="Email"/>
-      <Tag>{`${props.client.email}`}</Tag>
+      <Tag style={{ margin: "5px 0 15px 0" }}>{`${props.client.email}`}</Tag>
       <Label text="Birthday"/>
-      <Tag>{`${props.client.birthday}`}</Tag>
+      <Tag style={{ margin: "5px 0 15px 0" }}>{`${props.client.birthday}`}</Tag>
       <Label text="Phone"/>
-      <Tag>{`${props.client.phone}`}</Tag>
+      <Tag style={{ margin: "5px 0 15px 0" }}>{`${props.client.phone}`}</Tag>
     </div>
     <div className="client__orders">
       <Label text="Orders" />
-      <Table height="300px">
+      <Table>
         <Table.Header columns="repeat(4, 1fr) 60px">
           <Table.HeaderCell>Address</Table.HeaderCell>
           <Table.HeaderCell>Delivery Dt</Table.HeaderCell>
           <Table.HeaderCell>Comment</Table.HeaderCell>
           <Table.HeaderCell>Status</Table.HeaderCell>
         </Table.Header>
-        <Table.Body>
+        <Table.Body style={{ display: "block" }}>
           {getOrders(props.client.orders)}
         </Table.Body>
       </Table>

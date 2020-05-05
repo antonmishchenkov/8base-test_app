@@ -10,13 +10,13 @@ let OrderDetails = props => (
   <div className="client">
     <div className="client__data">
       <Label text="Address"/>
-      <Tag>{`${props.order.address}`}</Tag>
+      <Tag style={{ margin: "5px 0 15px 0" }}>{`${props.order.address}`}</Tag>
       <Label text="Delivery Dt"/>
-      <Tag>{`${props.order.deliveryDt}`}</Tag>
+      <Tag style={{ margin: "5px 0 15px 0" }}>{`${props.order.deliveryDt}`}</Tag>
       <Label text="Comment"/>
-      <Tag>{`${props.order.comment}`}</Tag>
+      <Tag style={{ margin: "5px 0 15px 0" }}>{`${props.order.comment}`}</Tag>
       <Label text="Status"/>
-      <Tag>{`${props.order.status}`}</Tag>
+      <Tag style={{ margin: "5px 0 15px 0" }}>{`${props.order.status}`}</Tag>
     </div>
   </div>
 )

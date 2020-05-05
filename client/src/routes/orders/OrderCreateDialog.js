@@ -65,6 +65,21 @@ class OrderCreateDialog extends React.Component {
               component={ InputField }
               stretch
             />
+            <Query query={ sharedGraphQL.PRODUCTS_LIST_QUERY }>
+              {
+                ({ data, loading }) => (
+                  <Field
+                    name="product"
+                    label="Product"
+                    placeholder="Select a product"
+                    component={ SelectField }
+                    loading={ loading }
+                    options={ loading ? [] : (data.productsList.items || []).map((product) => ({ value: product.id, label: product.name })) }
+                    stretch
+                  />
+                )
+              }
+            </Query>
             <Field
               name="status"
               label="Status"
