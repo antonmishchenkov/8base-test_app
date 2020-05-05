@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, NavLink } from 'react-router-dom';
 import { compose } from 'recompose';
 import * as R from 'ramda';
 import { Table, Dropdown, Icon, Menu, withModal } from '@8base/boost';
@@ -38,7 +39,7 @@ let ClientsTable = ({ clients, openModal, closeModal }) => (
               { R.pathOr('Unititled', ['phone'], client) }
             </Table.BodyCell>
             <Table.BodyCell>
-              { R.pathOr('Unititled', ['birthday'], client) }
+              { R.pathOr('Unititled', ['birthday'], client).split('-').reverse().join('/') }
             </Table.BodyCell>
             <Table.BodyCell>
               <Dropdown defaultOpen={ false }>
@@ -49,6 +50,7 @@ let ClientsTable = ({ clients, openModal, closeModal }) => (
                   {
                     ({ closeDropdown }) => (
                       <Menu>
+                        <Menu.Item><NavLink to={`/client/${client.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>Details</NavLink></Menu.Item>
                         <Menu.Item onClick={ () => { openModal(ClientDeleteDialog.id, { id: client.id }); closeDropdown(); } }>Delete</Menu.Item>
                         <Menu.Item onClick={ () => { openModal(ClientEditDialog.id, { initialValues: client }); closeDropdown(); } }>Edit</Menu.Item>
                       </Menu>

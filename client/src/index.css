@@ -30,3 +30,17 @@
 .Toastify__toast-container {
   z-index: 99999999;
 }
+
+.client {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.client__data {
+  margin-right: 60px;
+}
+
+.client__data-label {
+  margin: 5px 0 15px 0 !important;
+}
